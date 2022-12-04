@@ -5,12 +5,9 @@ pub fn solve(input: &Input) -> Output {
     let ans = input
         .iter()
         .map(|s| {
-            let sectors = s
-                .split(',')
+            s.split(',')
                 .map(expand_assignment)
-                .collect::<Vec<Vec<u32>>>();
-
-            sectors
+                .collect::<Vec<Vec<u32>>>()
         })
         .filter(|s| {
             if s[1].len() >= s[0].len() {
